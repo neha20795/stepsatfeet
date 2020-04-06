@@ -1,0 +1,28 @@
+.head{
+    margin-top: 150px;
+    margin-left: 550px;
+    margin-right: 550px;
+}
+
+.active-pink-4 input[type=text]:focus:not([readonly]) {
+    border: 1px solid #6f8cb8;
+    box-shadow: 0 0 0 1px #6f8cb8;
+    width: 600px;
+  }
+  .active-pink-3 input[type=text] {
+    border: 1px solid #6f8cb8;
+    box-shadow: 0 0 0 1px #6f8cb8;
+    width: 500px;
+  }
+  .active-pink-3 button {
+    border: 1px solid #6f8cb8;
+    box-shadow: 0 0 0 1px #6f8cb8;
+    width: 100px;
+    height: 40px;
+    border-radius: 15px 50px 10px;
+    background-color: #6f8cb8;
+  }
+  .active-pink-3 button :active {
+    opacity: 100%;
+    border-radius: 15px 50px 10px;
+  }

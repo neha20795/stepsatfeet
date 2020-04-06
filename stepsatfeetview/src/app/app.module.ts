@@ -15,7 +15,8 @@ import { LoginuiComponent } from './sharedcomponent/loginui/loginui.component';
 import { EmployeerloginComponent } from './sharedcomponent/employeerlogin/employeerlogin.component';
 import { EmployeerloginuiComponent } from './sharedcomponent/employeerloginui/employeerloginui.component';
 import { HomeComponent } from './pages/home/home.component';
-import { EmpsignupComponent } from './sharedcomponent/empsignup/empsignup.component'
+import { EmpsignupComponent } from './sharedcomponent/empsignup/empsignup.component';
+import { AddreviewemployeeComponent } from './employees/pages/addreviewemployee/addreviewemployee.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { EmpsignupComponent } from './sharedcomponent/empsignup/empsignup.compon
     EmployeerloginComponent,
     EmployeerloginuiComponent,
     HomeComponent,
-    EmpsignupComponent
+    EmpsignupComponent,
+    AddreviewemployeeComponent
   ],
   imports: [
     BrowserModule,

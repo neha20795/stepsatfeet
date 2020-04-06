@@ -1,0 +1,59 @@
+<div class="para">
+    <div class="row">
+        <div class="col-8 offset-4">
+            <div class="form-group row">
+                <label>First Name</label>
+                <input type="text" class="form-control" [(ngModel)]="emp.fname" required/>
+            </div>
+            <div class="form-group row">
+                <label>Last Name</label>
+                <input type="text" class="form-control" [(ngModel)]="emp.lname" required/>
+            </div>
+            <div class="form-group row">
+                <label>Date of Birth</label>
+                <input type="date"class="form-control" [(ngModel)]="emp.dob"required/>
+            </div>
+            <div class="form-group row">
+              <label>Email</label>
+              <input type="email"class="form-control" [(ngModel)]="emp.email" required/>
+            </div>
+            <div class="form-group row">
+              <label>Password</label>
+              <input type="password"class="form-control" [(ngModel)]="emp.password" required/>
+            </div>
+            <div class="form-group row">
+              <label>Address</label>
+              <input type="text"class="form-control" [(ngModel)]="emp.address" required/>
+            </div>
+            <div class="form-group row">
+              <label>Organization</label>
+              <input type="text" class="form-control" [(ngModel)]="emp.organization" required/>
+            </div>
+            <div class="form-group row">
+              <label>Qualification</label>
+              <input type="text" class="form-control" [(ngModel)]="emp.qualification" required/>
+            </div>
+            <div class="form-group row">
+              <label>Experience</label>
+              <input type="number" class="form-control" [(ngModel)]="emp.experience" required/>
+            </div>
+            <div class="form-group row">
+              <label>Mobile Number</label>
+              <input type="text" class="form-control" [(ngModel)]="emp.mobile" required/>
+            </div>
+            <div class="form-group row">
+              <label>Gender</label>
+              <select class="form-control" [(ngModel)]="emp.gender">
+                <option disabled>--Select--</option>
+                <option value="M" required>Male</option>
+                <option value="F">Female</option>
+`             </select>
+            </div>
+            <div class="form-group row">
+              <label>Image</label>
+              <input type="file" class="form-control" [(ngModel)]="emp.image" required/>
+            </div>
+            <button (click)="add()">Submit</button>
+        </div>
+    </div>
+</div>

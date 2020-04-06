@@ -1,0 +1,36 @@
+#emp {
+    text-align: center;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: x-large;
+    font-weight: 400;
+    opacity: 1;
+  }
+  
+  #emp td, #emp th {
+    //border: 1px solid #ddd;
+    font-family: "Impact", Arial, Helvetica, sans-serif;
+    padding: 8px;
+    border-collapse: collapse;
+    color:rgb(60, 60, 128);
+  }
+  
+  
+  
+  #emp th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  .bgset{
+    padding: 20px;
+  box-sizing: border-box;
+  font-family: Roboto, Helvetica, Arial, serif;
+  background: url(http://www.hdwallsource.com/img/2014/10/blurred-36379-37207-hd-wallpapers.jpg);
+  background-size: cover;
+  overflow: hidden;
+  border-radius: 15px 20px 25px 30px; 
+  }
