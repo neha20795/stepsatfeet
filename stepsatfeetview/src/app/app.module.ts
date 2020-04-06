@@ -14,7 +14,8 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginuiComponent } from './sharedcomponent/loginui/loginui.component';
 import { EmployeerloginComponent } from './sharedcomponent/employeerlogin/employeerlogin.component';
 import { EmployeerloginuiComponent } from './sharedcomponent/employeerloginui/employeerloginui.component';
-import { HomeComponent } from './pages/home/home.component'
+import { HomeComponent } from './pages/home/home.component';
+import { EmpsignupComponent } from './sharedcomponent/empsignup/empsignup.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { HomeComponent } from './pages/home/home.component'
     LoginuiComponent,
     EmployeerloginComponent,
     EmployeerloginuiComponent,
-    HomeComponent
+    HomeComponent,
+    EmpsignupComponent
   ],
   imports: [
     BrowserModule,

@@ -10,7 +10,11 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "ejs": "^3.0.1",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongodb": "^3.5.5",
+    "randomstring": "^1.1.5",
+    "sha1": "^1.1.1"
   }
 }
