@@ -16,7 +16,8 @@ import { EmployeerloginComponent } from './sharedcomponent/employeerlogin/employ
 import { EmployeerloginuiComponent } from './sharedcomponent/employeerloginui/employeerloginui.component';
 import { HomeComponent } from './pages/home/home.component';
 import { EmpsignupComponent } from './sharedcomponent/empsignup/empsignup.component';
-import { AddreviewemployeeComponent } from './employees/pages/addreviewemployee/addreviewemployee.component'
+import { AddreviewemployeeComponent } from './employees/pages/addreviewemployee/addreviewemployee.component';
+import { EmployeersignupComponent } from './sharedcomponent/employeersignup/employeersignup.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { AddreviewemployeeComponent } from './employees/pages/addreviewemployee/
     EmployeerloginuiComponent,
     HomeComponent,
     EmpsignupComponent,
-    AddreviewemployeeComponent
+    AddreviewemployeeComponent,
+    EmployeersignupComponent
   ],
   imports: [
     BrowserModule,

@@ -9,22 +9,22 @@
     </a>
     <!-- Navbar links -->
     <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
-        
+
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link" routerLink="/">Home</a>
             </li>
-        
+
             <li class="nav-item">
                 <a class="nav-link" routerLink="/employee">Employee</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/list">Employeer</a>
+                <a class="nav-link" routerLink="/employeer">Employeer</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/demo">Contact US</a>
+                <a class="nav-link" routerLink="/contactus">Contact US</a>
             </li>
-            
+
         </ul>
     </div>
     <div class="navbar-nav">
@@ -33,5 +33,19 @@
     </a>
     </div>
 </nav>
+<div *ngIf="componentName=='EmployeeLogin'; then fun1 else fun2"></div>
 
-<app-loginui></app-loginui>
+<ng-template #fun1>
+    <div class="head">
+      <app-loginui (onMainUICall)="message($event)"></app-loginui>
+    </div>
+</ng-template>
+
+<ng-template #fun2>
+  <div class="head">
+    <app-employeerloginui (onMainUICall)="message($event)"></app-employeerloginui>
+  </div>
+</ng-template>
+
+
+

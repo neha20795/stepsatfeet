@@ -11,9 +11,19 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  componentName:string ='EmployeeLogin'
 
   add(){
-    
+
+  }
+
+
+  message(compname){
+    // console.log(compname);
+    console.log(this.componentName);
+    this.componentName = compname;
+
   }
 
 }
+

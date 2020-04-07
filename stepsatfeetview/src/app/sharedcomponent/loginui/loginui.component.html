@@ -1,12 +1,12 @@
 
             <div class="modal fade" id="addModal">
                 <div class="modal-dialog">
-                    <div class="modal-content">    
+                    <div class="modal-content">
                         <div class="modal-header">
                             <h1>Login</h1>
                         </div>
                         <div class="modal-body">
-                            
+
                             <div class="form-groups">
                                 <div class="row">
                                     <input type="text" name="username" id="username" class="form__input" placeholder="Username">
@@ -25,9 +25,15 @@
                                 </div>
                         </div>
                         <div class="modal-footer">
-                            <button class="btn btn-success" 
-                                data-dismiss="modal">Login</button>
+                          <div>
+                            <button class="btn btn-success"
+                            data-dismiss="modal">Login</button>
                             <button class="btn btn-danger" data-dismiss="modal">Close</button>
+                          </div>
+                          <div>
+                            <p>Are you an Employer/Organization? <a href="#"
+                              (click)="callComponent()">Click Here</a></p>
+                          </div>
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule} from '@angular/forms'
 
 import { EmployeeRoutingModule } from './employee-routing.module';
 import { EmployeeComponent } from './employee.component';
@@ -16,7 +17,8 @@ import { AddreviewempComponent } from './pages/addreviewemp/addreviewemp.compone
   declarations: [EmployeeComponent, HomeComponent, SearchEmpComponent, SearchresultComponent, EmpdetailComponent, ImagedisplayComponent, AddrevieworgComponent, AddreviewempComponent],
   imports: [
     CommonModule,
-    EmployeeRoutingModule
+    EmployeeRoutingModule,
+    FormsModule
   ]
 })
 export class EmployeeModule { }
