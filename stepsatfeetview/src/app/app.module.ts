@@ -12,11 +12,9 @@ import { HowweworkComponent } from './pages/howwework/howwework.component';
 import { FooterheadComponent } from './pages/footerhead/footerhead.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginuiComponent } from './sharedcomponent/loginui/loginui.component';
-import { EmployeerloginComponent } from './sharedcomponent/employeerlogin/employeerlogin.component';
-import { EmployeerloginuiComponent } from './sharedcomponent/employeerloginui/employeerloginui.component';
 import { HomeComponent } from './pages/home/home.component';
 import { EmpsignupComponent } from './sharedcomponent/empsignup/empsignup.component';
-import { AddreviewemployeeComponent } from './employees/pages/addreviewemployee/addreviewemployee.component';
+
 import { EmployeersignupComponent } from './sharedcomponent/employeersignup/employeersignup.component'
 @NgModule({
   declarations: [
@@ -27,11 +25,9 @@ import { EmployeersignupComponent } from './sharedcomponent/employeersignup/empl
     FooterheadComponent,
     FooterComponent,
     LoginuiComponent,
-    EmployeerloginComponent,
-    EmployeerloginuiComponent,
     HomeComponent,
     EmpsignupComponent,
-    AddreviewemployeeComponent,
+
     EmployeersignupComponent
   ],
   imports: [

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-searchresult',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchresultComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private _router : Router, private _route : ActivatedRoute) { }
+  result : string;
   ngOnInit(): void {
+    this._route.paramMap.subscribe(
+      (params : ParamMap)=>{
+        let name = params.get('name');
+        this.result = name;
+      }
+    )
   }
 
 }

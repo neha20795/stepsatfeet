@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginuiComponent } from './sharedcomponent/loginui/loginui.component';
 import { HomeComponent } from './pages/home/home.component';
 import { EmpsignupComponent } from './sharedcomponent/empsignup/empsignup.component';
 import { EmploginComponent } from './sharedcomponent/emplogin/emplogin.component';
+import { EmployeersignupComponent } from './sharedcomponent/employeersignup/employeersignup.component';
 
 const routes: Routes = [
   {
@@ -13,6 +13,10 @@ const routes: Routes = [
   {
     path : "employeeregistration",
     component : EmpsignupComponent
+  },
+  {
+    path : "employeerregistration",
+    component : EmployeersignupComponent
   },
   {
     path : "employeelogin",

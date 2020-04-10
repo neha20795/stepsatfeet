@@ -13,6 +13,22 @@ export class EmployeeService {
     console.log(employee);
     return this.__http.post<any>("http://localhost:3000", employee);
   }
+  findEmployee(name :string){
+    return{
+      _id : "1047abcd",
+      fname : "Sneha",
+      lname : "Sharma",
+      dob : new Date('20/07/1995').toLocaleDateString,
+      email : "neha@sharma.in",
+      address : "Indore",
+      organization : "Tapan Garments",
+      qualification : 4,
+      mobile : "8821975526",
+      experience : 0,
+      gender : 'F',
+      image : "dataneha01"
+    }
+  }
   emptyEmployee(){
     return {
       fname : "",

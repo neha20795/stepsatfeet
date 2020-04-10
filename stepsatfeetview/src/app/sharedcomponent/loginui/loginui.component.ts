@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter  } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-loginui',
@@ -6,14 +6,12 @@ import { Component, OnInit, Output, EventEmitter  } from '@angular/core';
   styleUrls: ['./loginui.component.scss']
 })
 export class LoginuiComponent implements OnInit {
-  @Output() onMainPageCall= new EventEmitter();
-  constructor() { }
 
+  constructor() { }
+  componentName : boolean = true;
   ngOnInit(): void {
   }
-  callComponent(){
-    console.log("empLogin");
-    this.onMainPageCall.emit("EmpLogin");
+  callAnotherComponent(){
+    this.componentName = !this.componentName;
   }
 }
-

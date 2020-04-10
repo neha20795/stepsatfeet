@@ -6,13 +6,13 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./emplogin.component.scss']
 })
 export class EmploginComponent implements OnInit {
-  @Output() onMainUICall= new EventEmitter();
-  constructor() { }
 
+  constructor() { }
+  componentName : boolean = true;
   ngOnInit(): void {
   }
   callComponent(){
-    console.log("empLogin");
-    this.onMainUICall.emit("EmployeerLogin");
+    console.log("comp  value"+this.componentName)
+    this.componentName = !this.componentName;
   }
 }

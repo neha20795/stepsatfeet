@@ -1,6 +1,6 @@
 var express = require("express");
 var routes = express.Router();
-var Employee = require("../models/product");
+var Employee = require("../employee/index");
 
 
 routes.get("/", function(req, res){

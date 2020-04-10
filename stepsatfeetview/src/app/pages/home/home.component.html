@@ -1,16 +1,7 @@
-<div *ngIf="componentName=='EmployeeLogin'; then fun1 else fun2"></div>
+<div class="head">
+    <app-emplogin></app-emplogin>
+</div>
 
-<ng-template #fun1>
-    <div class="head">
-      <app-emplogin (onMainPageCall)="message($event)"></app-emplogin>
-    </div>
-</ng-template>
-
-<ng-template #fun2>
-  <div class="head">
-    <app-employeerlogin (onMainPageCall)="message($event)"></app-employeerlogin>
-  </div>
-</ng-template>
 
 <div>
   <app-howwework></app-howwework>

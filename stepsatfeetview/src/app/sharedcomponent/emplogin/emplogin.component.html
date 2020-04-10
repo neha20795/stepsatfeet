@@ -9,7 +9,7 @@
 			<div class="col-md-8 col-xs-12 col-sm-12 login_form ">
 				<div class="container-fluid">
 					<div class="row offset-2 he">
-						<h2>Log In</h2>
+						<h2>{{ componentName ? "Employee" : "Employeer" }} Log In</h2>
 					</div>
 					<div class="row">
 						<div class="form-group offset-2">
@@ -24,6 +24,7 @@
                                 <div class="col-1 offset-1">
                                     <input type="checkbox" name="remember_me" id="remember_me" class="">
                                 </div>
+
                                 <div class="col-8 ">
                                     <label for="remember_me">Remember Me!</label>
                                 </div>
@@ -34,10 +35,20 @@
 						</div>
 					</div>
 					<div class="row offset-1">
-						<p>Don't have an account? <a routerLink="/employeeregistration">Register Here</a></p>
-                    </div>
-                    <div class="row offset-1">
-						<p>Are you an Employer/Organization? <a href="#" 
+            <div *ngIf="componentName; then fun1 else fun2"></div>
+            <ng-template #fun1>
+              <p>Don't have an account?
+              <a routerLink="/employeeregistration">Register Here</a></p>
+            </ng-template>
+            <ng-template #fun2>
+              <p>Don't have an account?
+              <a routerLink="/employeerregistration">Register Here</a></p>
+            </ng-template>
+          </div>
+            <div class="row offset-1">
+						<p>Are you an
+              {{ componentName ? "Employeer/Organization?" : "Employee?"}}
+               <a href="#"
 							(click)="callComponent()">Click Here</a></p>
 					</div>
 				</div>

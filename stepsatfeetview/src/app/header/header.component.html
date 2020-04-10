@@ -29,23 +29,11 @@
     </div>
     <div class="navbar-nav">
         <a class="nav-item nav-link" href="#" data-target="#addModal"
-        data-toggle="modal" (click)="add()">LogIn
+        data-toggle="modal">LogIn
     </a>
     </div>
 </nav>
-<div *ngIf="componentName=='EmployeeLogin'; then fun1 else fun2"></div>
-
-<ng-template #fun1>
-    <div class="head">
-      <app-loginui (onMainUICall)="message($event)"></app-loginui>
-    </div>
-</ng-template>
-
-<ng-template #fun2>
-  <div class="head">
-    <app-employeerloginui (onMainUICall)="message($event)"></app-employeerloginui>
-  </div>
-</ng-template>
-
-
+<div class="head">
+  <app-loginui></app-loginui>
+</div>
 

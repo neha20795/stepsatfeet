@@ -1,16 +1,24 @@
+<!-- <div>
+  <h1>{{ sname }}</h1>
+  <p>
+    {{ data | json}}
+  </p>
+</div> -->
+
+
 <div class="fluid-container">
     <div class="row">
         <div class="col-4 offset-2">
             <div class="row">
-                <app-empdetail></app-empdetail>
+                <app-empdetail [id]="_id"></app-empdetail>
             </div>
             <div class="row" style="margin-top: 20px;margin-left: 200px;">
-                <button class="btn btn-info btn-lg">Add review</button>
+                <button class="btn btn-info btn-lg" (click)="callComponent(_id)">Add review</button>
             </div>
 
         </div>
         <div class="col-3 offset-1">
-            <app-imagedisplay></app-imagedisplay>
+            <app-imagedisplay [id]="_id"></app-imagedisplay>
         </div>
     </div>
 </div>
