@@ -10,7 +10,9 @@ export class EmpdetailComponent implements OnInit {
   constructor(private _emp : EmployeeService) { }
   data : any;
   ngOnInit(): void {
-    this.data = this._emp.findEmployee(this.id);
+    this.data = this._emp.findEmployee(this.id).subscribe(result=>{
+      console.log(result);
+    });
     console.log(this.data);
   }
 

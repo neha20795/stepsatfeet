@@ -14,11 +14,11 @@
 					<div class="row">
 						<div class="form-group offset-2">
 							<div class="row">
-								<input type="text" name="username" id="username" class="form__input" placeholder="Username">
+								<input type="text" name="username" id="username" [(ngModel)]='user.username' class="form__input" placeholder="Username">
 							</div>
 							<div class="row">
 								<!-- <span class="fa fa-lock"></span> -->
-								<input type="password" name="password" id="password" class="form__input" placeholder="Password">
+								<input type="password" name="password" id="password" [(ngModel)]='user.password' class="form__input" placeholder="Password">
 							</div>
 							<div class="row">
                                 <div class="col-1 offset-1">
@@ -30,7 +30,7 @@
                                 </div>
 							</div>
 							<div class="row">
-								<input type="submit" value="Submit" class="btn">
+                <button class="btn" (click)='empLogin()'>Login</button>
 							</div>
 						</div>
 					</div>

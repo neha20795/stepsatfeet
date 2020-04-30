@@ -2,10 +2,10 @@ var connect = require("../config/connect");
 var dbase = "reviewsystem";
 var collec = "employee";
 
-module.exports.find=function(cb){
+module.exports.find=function(where, cb){
     connect(function (err, client) {
         var db = client.db(dbase);
-        db.collection(dbase).find().toArray(cb);
+        db.collection(dbase).find(where).toArray(cb);
     });
 }
 
