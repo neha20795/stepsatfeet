@@ -2,27 +2,47 @@ var express = require("express");
 var routes = express.Router();
 var Employee = require("../../models/employee");
 var jwt = require("jsonwebtoken");
-routes.get("/", function(req, res){
-        if(err){
-            res.statusText = 'Something went wrong';
-            return res.status(406).send('Check again');
-        }
-        else{
-            res.statusText = 'Your have signed-up succesfully';
-            return res.status(200).send('You are doing a great job');
-        }
-});
+var sha1 = require("sha1");
+
 routes.post("/", function(req, res){
-    Employee.insert(req.body, function(err, result){
+    var e = req.body.email;
+    Employee.find({email : e}, function(err, result){
         if(err){
-            res.statusText = 'Something went wrong';
-            return res.status(406);
+            msg = 'Something went wrong';
+            return res.status(401).send({
+                success : false,
+                msg
+            });
+        }
+        else if(result.length == 1)
+        {
+            msg = 'User Already Exists';
+            return res.status(401).send({
+                success : false,
+                msg
+            });
         }
         else{
-            res.statusText = 'Your have signed-up succesfully';
-            return res.status(200);
+            req.body.password = sha1(req.body.password);
+            Employee.insert(req.body, function(err, result){
+                if(err){
+                    msg = 'Something went wrong';
+                    return res.status(401).send({
+                        success : false,
+                        msg
+                    });
+                }
+                else{
+                    msg = 'Your have signed-up succesfully';
+                    return res.status(200).send({
+                        success : true,
+                        msg
+                    });
+                }
+            });
         }
     });
+    
 });
 
 routes.post("/emplogin", function(req, res){
@@ -34,7 +54,7 @@ routes.post("/emplogin", function(req, res){
         console.log("in");
         if(result.length == 1)
             {
-                if(result[0].password == req.body.password)
+                if(result[0].password == sha1(req.body.password))
                 {
                     console.log("Match");
                     console.log(result[0]);

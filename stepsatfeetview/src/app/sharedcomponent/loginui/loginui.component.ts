@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Employeelogin } from 'src/app/models/employeelogin';
+import { EmploginService } from 'src/app/services/emplogin.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-loginui',
@@ -7,11 +10,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginuiComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+      private _auth : EmploginService,
+        private _router : Router,
+  ) { }
   componentName : boolean = true;
+  errorMsg : string;
   ngOnInit(): void {
   }
   callAnotherComponent(){
     this.componentName = !this.componentName;
+  }
+  user : Employeelogin={
+    username : "",
+    password : ""
+  };
+  login(){
+    if(this.componentName){
+      console.log("Hello I am in");
+    console.log(this.user.username+" "+this.user.password);
+    this._auth.doLogin(this.user).subscribe(data=>{
+      console.log(data);
+      localStorage.setItem("mytoken", data.token);
+      this._router.navigate(["/employee"]);
+    },
+    err=>{
+      this.errorMsg = err.error.msg;
+    });
+    }
   }
 }

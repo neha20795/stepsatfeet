@@ -1,14 +1,18 @@
-
+{{msg}}
 <div class="bgset">
+  <h1>{{dat}}</h1>
+  <!-- <p>
+    {{ data | json}}
+  </p> -->
     <div class="card-body">
      <table id="emp">
          <tr>
              <td>Name</td>
-             <td>{{data.fname}} {{data.lname}}</td>
+             <td>{{data.detail.fname}} {{data.detail.lname}}</td>
          </tr>
          <tr>
             <td>Company</td>
-            <td>{{data.organization}}</td>
+            <td>{{data.detail.organization}}</td>
         </tr>
         <tr>
             <td>Rating</td>
@@ -16,12 +20,20 @@
         </tr>
         <tr>
             <td>Experience</td>
-            <td>{{data.experience}}</td>
+            <td>{{data.detail.experience}}</td>
         </tr>
         <tr>
             <td>Achievement</td>
             <td>Contributer in Financial Agencies</td>
         </tr>
+        <tr>
+          <td>Email</td>
+          <td>{{data.detail.email}}</td>
+      </tr>
+      <tr>
+        <td>Address</td>
+        <td>{{data.detail.address}}</td>
+    </tr>
      </table>
      </div>
 </div>
