@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "stepsatfeetview": {
@@ -127,6 +127,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "stepsatfeetview"
+    }
+  },
+  "defaultProject": "stepsatfeetview",
+  "cli": {
+    "analytics": "4404ce8c-3cda-4a5e-a1e2-01d0de6a91fc"
+  }
 }

@@ -51,10 +51,11 @@
             </div>
             <div class="form-group row">
               <label>Image</label>
-              <input type="file" class="form-control" [(ngModel)]="emp.image" required/>
+              <input type="file" class="form-control" (change)="upload($event.target.files)" required/>
             </div>
             <pre>{{message}}</pre>
             <button (click)="add()">Submit</button>
         </div>
     </div>
 </div>
+
