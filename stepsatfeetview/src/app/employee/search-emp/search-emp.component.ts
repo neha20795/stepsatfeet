@@ -19,3 +19,4 @@ export class SearchEmpComponent implements OnInit{
     this._router.navigate(["employee/employeesearch", searchname]);
   }
 }
+

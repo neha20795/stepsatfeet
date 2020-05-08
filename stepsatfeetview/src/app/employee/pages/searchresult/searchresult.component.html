@@ -1,3 +1,34 @@
 <app-search-emp></app-search-emp>
-<app-home [sname]="result"></app-home>
+<div *ngFor="let x of dataArray;">
+    <div class="container">
+      <div class="row" style="background:url(http://www.hdwallsource.com/img/2014/10/blurred-36379-37207-hd-wallpapers.jpg);
+                              border-radius: 15px 20px 25px 30px;
+                              padding: 10px; margin-top: 20px;
+                              font-family: 'Courier New', Courier, monospace;
+                              font-weight: 500;"
+                              >
+        <div class="col-6 offset-1">
+          <div class="container">
+            <div class="row">
+            <div class="col">
+              <h3>{{x.fname}} {{x.lname}}</h3>
+              <pre>{{x.gender}}</pre>
+              <pre>{{x.address}}</pre>
+              <pre>{{x.organization}}</pre>
+              <button class="btn btn-primary" (click)="details(x.email)" style="height: 50px; width: 150px;">View Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-3 col-1">
+          <div>
+            <img src='../../../../assets/images/employee/{{x.imageeurl}}'>
+          </div>
+        </div>
+        </div>
+      </div>
+  </div>
+<!-- <app-home [sname]="result"></app-home> -->
+
 

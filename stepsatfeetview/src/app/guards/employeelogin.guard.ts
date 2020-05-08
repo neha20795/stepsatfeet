@@ -26,4 +26,14 @@ export class EmployeeloginGuard implements CanActivate {
       }
   }
 
+  check(){
+    if(this._authemp.isLoggedIn())
+      {
+        return true;
+      }
+      else{
+        return false;
+      }
+  }
+
 }

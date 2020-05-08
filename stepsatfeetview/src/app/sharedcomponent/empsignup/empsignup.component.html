@@ -1,6 +1,6 @@
 <div class="para">
     <div class="row">
-        <div class="col-8 offset-4">
+        <div class="col-8 offset-2">
             <div class="form-group row">
                 <label>First Name</label>
                 <input type="text" class="form-control" [(ngModel)]="emp.fname" required/>
@@ -39,7 +39,25 @@
             </div>
             <div class="form-group row">
               <label>Mobile Number</label>
-              <input type="text" class="form-control" [(ngModel)]="emp.mobile" required/>
+              <input type="text" class="form-control" [(ngModel)]="emp.mobile[0]" required/>
+
+            </div>
+            <div class="form-group row">
+              <form [formGroup]="empForm">
+                <div formArrayName="mobiles">
+                  <div *ngFor="let mobile of mobiles().controls; let empIndex=index">
+                    <div [formGroupName]="empIndex">
+                      <div>
+                        <input type="text" formControlName="mobile" placeholder="{{empIndex+2}} mobile">
+                        <button class="button b3" (click)="removeEmployee(empIndex)">RemoveMobile</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div>
+              <button class="button b3" (click)="addMobile()">Add Mobile</button>
             </div>
             <div class="form-group row">
               <label>Gender</label>
@@ -54,7 +72,7 @@
               <input type="file" class="form-control" (change)="upload($event.target.files)" required/>
             </div>
             <pre>{{message}}</pre>
-            <button (click)="add()">Submit</button>
+            <button class="button bt" (click)="add()">Submit</button>
         </div>
     </div>
 </div>

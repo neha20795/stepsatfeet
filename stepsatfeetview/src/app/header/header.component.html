@@ -19,7 +19,7 @@
                 <a class="nav-link" routerLink="/employee">Employee</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/employeer">Employeer</a>
+                <a class="nav-link" routerLink="/employeer">Employer</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" routerLink="/contactus">Contact US</a>
@@ -27,11 +27,20 @@
 
         </ul>
     </div>
-    <div class="navbar-nav">
-        <a class="nav-item nav-link" href="#" data-target="#addModal"
-        data-toggle="modal">LogIn
-    </a>
+    <!-- If else -->
+
+    <div *ngIf="check; then logout else login"></div>
+    <ng-template #login>
+      <div class="navbar-nav">
+          <a class="nav-item nav-link" href="#" data-target="#addModal"
+          data-toggle="modal">LogIn</a>
+      </div>
+    </ng-template>
+    <ng-template #logout>
+      <div class="navbar-nav">
+        <a class="nav-link" routerLink="" (click)="logoutUser()">Logout({{name}})</a>
     </div>
+    </ng-template>
 </nav>
 <div class="head">
   <app-loginui></app-loginui>

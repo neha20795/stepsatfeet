@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Emptoempreview } from '../../../models/emptoempreview';
 import { EmptoempreviewService } from '../../../services/emptoempreview.service';
-import { Router } from '@angular/router';
+import { Router, ParamMap, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-addreviewemp',
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AddreviewempComponent implements OnInit {
 
-  constructor(private _emp : EmptoempreviewService, private route: Router) { }
+  constructor(private _emp : EmptoempreviewService, private route: Router,private _route : ActivatedRoute) { }
   review : Emptoempreview={
     empidgiver : "",
     orgid : "",
@@ -20,7 +20,13 @@ export class AddreviewempComponent implements OnInit {
     rating : null,
     empidreciever : null
   };
+  dat : any;
   ngOnInit(): void {
+    this._route.paramMap.subscribe((params : ParamMap)=>{
+      let name = params.get('id');
+      this.dat = name;
+      console.log(name);
+    })
   }
   add(){
       console.log(this.review);

@@ -8,7 +8,6 @@ routes.use(express.static(__dirname+"/public"));
 
 routes.use(fileupload());
 
-
 routes.post("/", function(req, res){
     // console.log(req.files);
     var image = req.files.image;

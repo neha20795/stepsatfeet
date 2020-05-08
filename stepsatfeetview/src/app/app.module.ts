@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { EmploginComponent } from './sharedcomponent/emplogin/emplogin.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HowweworkComponent } from './pages/howwework/howwework.component';
 import { FooterheadComponent } from './pages/footerhead/footerhead.component';
@@ -15,7 +15,8 @@ import { LoginuiComponent } from './sharedcomponent/loginui/loginui.component';
 import { HomeComponent } from './pages/home/home.component';
 import { EmpsignupComponent } from './sharedcomponent/empsignup/empsignup.component';
 
-import { EmployeersignupComponent } from './sharedcomponent/employeersignup/employeersignup.component'
+import { EmployeersignupComponent } from './sharedcomponent/employeersignup/employeersignup.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,13 +29,16 @@ import { EmployeersignupComponent } from './sharedcomponent/employeersignup/empl
     HomeComponent,
     EmpsignupComponent,
 
-    EmployeersignupComponent
+    EmployeersignupComponent,
+
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

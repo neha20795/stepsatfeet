@@ -17,6 +17,11 @@ export class EmployeeService {
     console.log(name);
     return this.__http.get("http://localhost:3000/empsearch/"+name);
   }
+  searchEmployee(name :string){
+    console.log(name);
+    return this.__http.get("http://localhost:3000/empdetail/"+name);
+  }
+
   emptyEmployee(){
     return {
       fname : "",
@@ -27,7 +32,7 @@ export class EmployeeService {
       address : "",
       organization : "",
       qualification : 0,
-      mobile : "",
+      mobile : [""],
       experience : 0,
       gender : '',
       image : ""

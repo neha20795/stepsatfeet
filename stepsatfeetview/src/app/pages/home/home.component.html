@@ -1,7 +1,15 @@
-<div class="head">
-    <app-emplogin></app-emplogin>
-</div>
+<div *ngIf="check; then push1 else push2"></div>
 
+<ng-template #push2>
+  <div class="head">
+      <app-emplogin></app-emplogin>
+  </div>
+</ng-template>
+<ng-template #push1>
+  <div class="head">
+     <app-dashboard></app-dashboard>
+  </div>
+</ng-template>
 
 <div>
   <app-howwework></app-howwework>

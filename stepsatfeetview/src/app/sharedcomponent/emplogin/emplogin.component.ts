@@ -4,7 +4,7 @@ import { Employeelogin } from '../../models/employeelogin';
 import { EmploginService } from '../../services/emplogin.service';
 import { EmployeestateService } from '../../state/employeestate.service';
 import { Employeedata } from '../../models/employeedata';
-
+import { DatastorerService } from '../../services/datastorer.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -22,7 +22,8 @@ export class EmploginComponent implements OnInit {
   constructor(
         private _auth : EmploginService,
         private _router : Router,
-        private stateService : EmployeestateService
+        private stateService : EmployeestateService,
+        private dst : DatastorerService
             ) { }
 
   componentName : boolean = true;
@@ -43,7 +44,7 @@ export class EmploginComponent implements OnInit {
     console.log(this.user.username+" "+this.user.password);
     this._auth.doLogin(this.user).subscribe(data=>{
       console.log(data);
-      localStorage.setItem("mytoken", data.token);
+      localStorage.setItem("mytoken", data.detail.email);
       var infoData : Employeedata ={
         _id: data.detail._id,
         fname: data.detail.fname ,
@@ -61,6 +62,7 @@ export class EmploginComponent implements OnInit {
       this.info$ = this.stateService.state.pipe(map(state => state._id));
       this.state$ = this.stateService.state;
       this.stateService.changeName(infoData);
+      this.dst.setLogValue(false);
       this._router.navigate(["/employee"]);
     },
     err=>{

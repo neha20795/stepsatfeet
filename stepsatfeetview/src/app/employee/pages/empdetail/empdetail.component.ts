@@ -1,7 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { EmployeeService } from '../../../services/employee.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { DatastorerService } from '../../../services/datastorer.service';
 import { Employeedata } from 'src/app/models/employeedata';
+
 @Component({
   selector: 'app-empdetail',
   templateUrl: './empdetail.component.html',
@@ -9,7 +11,7 @@ import { Employeedata } from 'src/app/models/employeedata';
 })
 export class EmpdetailComponent implements OnInit {
 @Input() id : any;
-  constructor(private _emp : EmployeeService,private _router : Router, private _route : ActivatedRoute) { }
+  constructor(private _emp : EmployeeService,private _router : Router, private _route : ActivatedRoute, private dst : DatastorerService) { }
   // data : Employeedata ={
   //   _id: "",
   //   fname: "" ,
@@ -27,21 +29,26 @@ export class EmpdetailComponent implements OnInit {
   data : any;
   dat : any;
   msg = "";
-  ngOnInit(): void {
 
+  ngOnInit(): void {
     this._route.paramMap.subscribe((params : ParamMap)=>{
-      let name = params.get('name');
-      this.dat = name===null?"Neha":name;
+      let name = params.get('emailId');
+      this.dat = name;
       console.log(name);
     })
-     this._emp.findEmployee(this.dat).subscribe(result=>{
+     this._emp.searchEmployee(this.dat).subscribe(result=>{
       console.log(result);
       this.data = result;
+      this.dst.setname(this.data.detail.email, this.data.detail.image);
     },
     err=>{
       this.msg = "Check the spelling";
     });
 
+  }
+  callComponent(){
+    let email = this.data.detail.email;
+    this._router.navigate(["employee/addempreview", email]);
   }
   //imgurl = this.data.detail.image;
 

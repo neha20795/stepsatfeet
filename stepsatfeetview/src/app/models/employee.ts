@@ -5,7 +5,7 @@ export interface Employee {
   email : string;
   password : string;
   address : string;
-  mobile : string;
+  mobile : string[];
   organization : string;
   qualification : number;
   experience : number;

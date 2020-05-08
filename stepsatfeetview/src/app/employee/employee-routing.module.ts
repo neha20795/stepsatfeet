@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { EmployeeComponent } from './employee.component';
 import { SearchresultComponent } from './pages/searchresult/searchresult.component';
 import { AddreviewempComponent } from './pages/addreviewemp/addreviewemp.component';
+import { EmpdetailComponent } from './pages/empdetail/empdetail.component';
 
 const routes: Routes = [
   { path: '',
@@ -17,6 +18,11 @@ const routes: Routes = [
   {
     path : 'addempreview/:id',
     component : AddreviewempComponent,
+    pathMatch : "full"
+  },
+  {
+    path : 'employeedetail/:emailId',
+    component : EmpdetailComponent,
     pathMatch : "full"
   }
 ];
