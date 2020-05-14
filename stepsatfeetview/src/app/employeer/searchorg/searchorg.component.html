@@ -2,12 +2,15 @@
 
   <div class="active-pink-3 active-pink-4 mb-4">
 
-    <form class="form-inline md-form mr-auto mb-4">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search Employeer" aria-label="Search" [(ngModel)]='textname'>
-      <button mdbBtn size="sm" color="warning" outline="true" rounded="true" class="my-0 waves-light"
-        mdbWavesEffect>Search</button>
-    </form>
+    <div class="row">
+      <div class="col-6">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" [(ngModel)]="searchData">
+      </div>
+      <div class="col-2 offset-2">
+        <button mdbBtn size="sm" rounded="true" (click)="searchInfo(searchData)">Search</button>
+      </div>
 
+    </div>
   </div>
 
 </div>

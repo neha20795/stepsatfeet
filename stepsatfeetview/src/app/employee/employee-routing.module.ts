@@ -5,6 +5,8 @@ import { EmployeeComponent } from './employee.component';
 import { SearchresultComponent } from './pages/searchresult/searchresult.component';
 import { AddreviewempComponent } from './pages/addreviewemp/addreviewemp.component';
 import { EmpdetailComponent } from './pages/empdetail/empdetail.component';
+import { AddrevieworgComponent } from './pages/addrevieworg/addrevieworg.component';
+import { UpdatedetailComponent } from './pages/updatedetail/updatedetail.component';
 
 const routes: Routes = [
   { path: '',
@@ -24,6 +26,14 @@ const routes: Routes = [
     path : 'employeedetail/:emailId',
     component : EmpdetailComponent,
     pathMatch : "full"
+  },
+  {
+    path :  'addemployeereview/:emailId' ,
+    component : AddrevieworgComponent
+  },
+  {
+    path : 'updatedetail',
+    component : UpdatedetailComponent
   }
 ];
 

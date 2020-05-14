@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { EmployeerRoutingModule } from './employeer-routing.module';
 import { EmployeerComponent } from './employeer.component';
@@ -11,14 +11,19 @@ import { AddreviewemployeeComponent } from './pages/addreviewemployee/addreviewe
 import { AddempconfidentialreviewComponent } from './pages/addempconfidentialreview/addempconfidentialreview.component';
 import { SearchorgComponent } from './searchorg/searchorg.component';
 import { OrgdetailComponent } from './pages/orgdetail/orgdetail.component';
+import { UpdateorgdetailComponent } from './pages/updateorgdetail/updateorgdetail.component';
+import { UploadorgimagesComponent } from './pages/uploadorgimages/uploadorgimages.component';
+import { ReviewfromemployeeComponent } from './pages/reviewfromemployee/reviewfromemployee.component';
+import { ConfidentialreviewlistComponent } from './pages/confidentialreviewlist/confidentialreviewlist.component';
 
 
 @NgModule({
-  declarations: [EmployeerComponent, HomeComponent, ImagedisplayComponent, SearchresultComponent, AddreviewemployeeComponent, AddempconfidentialreviewComponent, SearchorgComponent, OrgdetailComponent],
+  declarations: [EmployeerComponent, HomeComponent, ImagedisplayComponent, SearchresultComponent, AddreviewemployeeComponent, AddempconfidentialreviewComponent, SearchorgComponent, OrgdetailComponent, UpdateorgdetailComponent, UploadorgimagesComponent, ReviewfromemployeeComponent, ConfidentialreviewlistComponent],
   imports: [
     CommonModule,
     FormsModule,
-    EmployeerRoutingModule
+    EmployeerRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class EmployeerModule { }

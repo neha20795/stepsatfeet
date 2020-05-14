@@ -1,13 +1,42 @@
 <div class="para">
   <div class="row">
+    <h1>Employee to Employee</h1>
       <div class="col-8 offset-2">
         <div class="form-group row">
           <label>Good</label>
-          <input type="text" class="form-control" [(ngModel)]="review.good" required/>
+          <input type="text" class="form-control" [(ngModel)]="review.good[0]" required/>
+        </div>
+        <div class="form-group row">
+          <form [formGroup]="reviewForm">
+            <div formArrayName="goodreviews">
+              <div *ngFor="let good of goodreviews().controls; let empIndex=index">
+                <div [formGroupName]="empIndex">
+                  <div>
+                    <input type="text" formControlName="goodreview" placeholder="{{empIndex+2}} Good">
+                    <button class="button b3" (click)="removeGoodReview(empIndex)">RemoveGoodReview</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
         <div class="form-group row">
           <label>Bad</label>
-          <input type="text" class="form-control" [(ngModel)]="review.bad" required/>
+          <input type="text" class="form-control" [(ngModel)]="review.bad[0]" required/>
+        </div>
+        <div class="form-group row">
+          <form [formGroup]="reviewForm">
+            <div formArrayName="badreviews">
+              <div *ngFor="let bad of badreviews().controls; let empIndex=index">
+                <div [formGroupName]="empIndex">
+                  <div>
+                    <input type="text" formControlName="badreview" placeholder="{{empIndex+2}}Bad">
+                    <button class="button b3" (click)="removebadReview(empIndex)">RemoveGoodReview</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
         <div class="form-group row">
           <label>Position</label>

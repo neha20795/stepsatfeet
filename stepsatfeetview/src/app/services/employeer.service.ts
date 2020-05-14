@@ -13,15 +13,27 @@ export class EmployeerService {
     console.log(employeer);
     return this.__http.post<any>("http://localhost:3000/employeer", employeer);
   }
+  findEmployeer(name :string){
+    console.log(name);
+    return this.__http.get("http://localhost:3000/employeer/orgsearch/"+name);
+  }
+  searchEmployeer(name :string){
+    console.log(name);
+    return this.__http.get("http://localhost:3000/employeer/orgdetail/"+name);
+  }
+
+
   emptyEmployeer(){
     return {
       organization_name : "",
       registration_date : null,
       certification_type : "",
       director : [""],
+      email : "",
+      password : "",
       ceo : "",
       address : "",
-      contact : "",
+      contact : [""],
       employeeCapacity : null,
       safetyRating : null,
       photos : ""

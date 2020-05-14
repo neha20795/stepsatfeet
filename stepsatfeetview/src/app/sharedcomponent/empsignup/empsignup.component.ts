@@ -55,31 +55,31 @@ export class EmpsignupComponent implements OnInit {
     })
   }
   addMobile() {
-    console.log("Adding a mobile");
+    // console.log("Adding a mobile");
     this.mobiles().push(this.newMobile());
   }
   removeEmployee(mobIndex:number) {
     this.mobiles().removeAt(mobIndex);
   }
   add(){
-    console.log(this.emp);
-    console.log(this.empForm.value);
+    // console.log(this.emp);
+    // console.log(this.empForm.value);
     let le = (this.empForm.get(['mobiles']).value).length;
-      console.log(this.emp);
+      // console.log(this.emp);
       this._upload.fileUpload(this.form).subscribe(data=>{
         this.emp.image = data.name;
-        console.log(this.emp.image);
+        // console.log(this.emp.image);
         this.emp.image = data.name;
-          console.log(this.emp.image);
+          // console.log(this.emp.image);
           for(let i=0; i<le;i++){
             let vars = this.empForm.get(['mobiles',i]).get(['mobile']).value;
             let value = vars;
             this.emp.mobile.push(value);
-            console.log(value);
+            // console.log(value);
           }
         this._emp.addEmployee(this.emp).subscribe(data=>{
-          console.log(data);
-          console.log("data.statusText");
+          // console.log(data);
+          // console.log("data.statusText");
           let myurl = "/";
           this.route.navigateByUrl(myurl).then(e => {
             if (e) {

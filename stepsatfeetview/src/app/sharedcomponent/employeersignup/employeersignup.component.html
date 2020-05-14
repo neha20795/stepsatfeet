@@ -10,13 +10,38 @@
               <input type="date" class="form-control" [(ngModel)]="emp.registration_date" required/>
           </div>
           <div class="form-group row">
+            <label>Official Email Address</label>
+            <input type="text" class="form-control" [(ngModel)]="emp.email" required/>
+          </div>
+          <div class="form-group row">
+            <label>Password</label>
+            <input type="password" class="form-control" [(ngModel)]="emp.password" required/>
+        </div>
+          <div class="form-group row">
               <label>Certification Type</label>
               <input type="text"class="form-control" [(ngModel)]="emp.certification_type"required/>
           </div>
           <div class="form-group row">
             <label>Director</label>
-            <input type="text"class="form-control" [(ngModel)]="emp.director" required/>
+            <input type="text"class="form-control" [(ngModel)]="emp.director[0]" required/>
           </div>
+          <div class="form-group row">
+            <form [formGroup]="empForm">
+              <div formArrayName="directors">
+                <div *ngFor="let m of directors().controls; let empIndex=index">
+                  <div [formGroupName]="empIndex">
+                    <div>
+                      <input type="text" formControlName="Director" placeholder="{{empIndex+2}} Director">
+                      <button class="button b3" (click)="removeDirector(empIndex)">RemoveDirector</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+            </div>
+            <div>
+            <button class="button b3" (click)="addDirector()">Add Director</button>
+            </div>
           <div class="form-group row">
             <label>CEO Name</label>
             <input type="text"class="form-control" [(ngModel)]="emp.ceo" required/>
@@ -27,7 +52,24 @@
           </div>
           <div class="form-group row">
             <label>Contact</label>
-            <input type="text" class="form-control" [(ngModel)]="emp.contact" required/>
+            <input type="text" class="form-control" [(ngModel)]="emp.contact[0]" required/>
+          </div>
+          <div class="form-group row">
+            <form [formGroup]="empForm">
+              <div formArrayName="mobiles">
+                <div *ngFor="let mobile of mobiles().controls; let empIndex=index">
+                  <div [formGroupName]="empIndex">
+                    <div>
+                      <input type="text" formControlName="mobile" placeholder="{{empIndex+2}} mobile">
+                      <button class="button b3" (click)="removeMobile(empIndex)">RemoveMobile</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div>
+            <button class="button b3" (click)="addMobile()">Add Mobile</button>
           </div>
           <div class="form-group row">
             <label>Employee Capacity</label>
@@ -40,12 +82,9 @@
 
           <div class="form-group row">
             <label>Photos</label>
-            <input type="file" class="form-control" [(ngModel)]="emp.photos" required/>
+            <input type="file" class="form-control" (change)="upload($event.target.files)" required/>
           </div>
           <button (click)="add()">Submit</button>
       </div>
   </div>
 </div>
-<!--
-  Company Email and Password are missing
--->

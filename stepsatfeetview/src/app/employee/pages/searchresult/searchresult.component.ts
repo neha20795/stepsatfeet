@@ -21,17 +21,22 @@ export class SearchresultComponent implements OnInit {
   dat : any;
   msg = "";
   data : any;
-  constructor(private _emp : EmployeeService,private _router : Router, private _route : ActivatedRoute, private dst : DatastorerService) { }
+  constructor(private _emp : EmployeeService,
+              private _router : Router,
+              private _route : ActivatedRoute,
+              private dst : DatastorerService) { }
+
   result : string;
+
   ngOnInit(): void {
     this._route.paramMap.subscribe(
       (params : ParamMap)=>{
         let name = params.get('name');
         this.dat = name===null?"Neha":name;
-        console.log(name);
+        // console.log(name);
       })
       this._emp.findEmployee(this.dat).subscribe(result=>{
-        console.log(result);
+        // console.log(result);
          this.data = result;
         for(let i=0; i<this.data.detail.length;i++)
       {

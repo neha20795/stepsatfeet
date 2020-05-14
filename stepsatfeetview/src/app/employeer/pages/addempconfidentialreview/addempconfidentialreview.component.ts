@@ -26,10 +26,10 @@ export class AddempconfidentialreviewComponent implements OnInit {
   ngOnInit(): void {
   }
   add(){
-      console.log(this.review);
+      // console.log(this.review);
       this._emp.addConfidentialReview(this.review).subscribe(data=>{
-        console.log(data);
-        console.log("data.statusText");
+        // console.log(data);
+        // console.log("data.statusText");
         this.review = {
           empid : null,
           orgidrequired : "",

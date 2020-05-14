@@ -29,10 +29,10 @@ export class LoginuiComponent implements OnInit {
   };
   login(){
     if(this.componentName){
-      console.log("Hello I am in");
-      console.log(this.user.username+" "+this.user.password);
+      // console.log("Hello I am in");
+      // console.log(this.user.username+" "+this.user.password);
       this._auth.doLogin(this.user).subscribe(data=>{
-      console.log(data);
+      // console.log(data);
       localStorage.setItem("mytoken", data.token);
       this.dst.setLogValue(false);
       this._router.navigate(["/employee"]);

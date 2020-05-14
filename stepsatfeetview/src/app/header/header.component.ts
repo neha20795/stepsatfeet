@@ -15,15 +15,17 @@ export class HeaderComponent implements OnInit {
   check : boolean = true;
   name : string;
   ngOnInit(): void {
-    console.log(this.check);
-    const dataObservable = this.dst.getData();
-    dataObservable.subscribe((val: boolean) => {
-        this.check = val;
-    });
-    if(this._authServ.isLoggedIn()){
+    // console.log(this.check);
+    // console.log(this._authServ.getToken())
+    if(this._authServ.getToken()!=null){
+      this.check = false;
       this.name = localStorage.getItem("mytoken");
+      // console.log(this.name)
     }
-    console.log(this.check);
+    else{
+      this.check=true;
+    }
+    // console.log(this.check);
   }
 
   add(){

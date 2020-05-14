@@ -14,9 +14,18 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginuiComponent } from './sharedcomponent/loginui/loginui.component';
 import { HomeComponent } from './pages/home/home.component';
 import { EmpsignupComponent } from './sharedcomponent/empsignup/empsignup.component';
-
 import { EmployeersignupComponent } from './sharedcomponent/employeersignup/employeersignup.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component'
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { ContactusComponent } from './pages/contactus/contactus.component';
+// import { UpdateinfoComponent } from './updateinfo/updateinfo.component';
+import { UploadimagesComponent } from './pages/uploadimages/uploadimages.component';
+import { AddmoreinfoComponent } from './pages/addmoreinfo/addmoreinfo.component';
+import { ReviewbyyouComponent } from './pages/reviewbyyou/reviewbyyou.component';
+import { ReviewforyouComponent } from './pages/reviewforyou/reviewforyou.component';
+import { ConfidentialinforequestComponent } from './pages/confidentialinforequest/confidentialinforequest.component';
+import { ReviewComponent } from './pages/review/review.component';
+// import { SearchEmpComponent } from './employee/search-emp/search-emp.component';
+// import { SearchorgComponent } from './employeer/searchorg/searchorg.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,10 +37,16 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component'
     LoginuiComponent,
     HomeComponent,
     EmpsignupComponent,
-
     EmployeersignupComponent,
+    DashboardComponent,
+    ContactusComponent,
+    UploadimagesComponent,
+    AddmoreinfoComponent,
+    ReviewbyyouComponent,
+    ReviewforyouComponent,
+    ConfidentialinforequestComponent,
+    ReviewComponent,
 
-    DashboardComponent
   ],
   imports: [
     BrowserModule,

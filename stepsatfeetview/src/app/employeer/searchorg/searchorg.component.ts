@@ -1,4 +1,5 @@
 import { Component, OnInit} from '@angular/core';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-searchorg',
@@ -7,11 +8,15 @@ import { Component, OnInit} from '@angular/core';
 })
 export class SearchorgComponent implements OnInit {
 
-  textname : string = "";
+  searchData : string;
 
-  constructor() { }
+  constructor(private _router : Router) { }
 
   ngOnInit(): void {
+  }
+  searchInfo(searchname : string){
+    this.searchData = searchname;
+    this._router.navigate(["employeer/orgsearch", searchname]);
   }
 
 }

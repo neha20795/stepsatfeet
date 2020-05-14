@@ -15,9 +15,9 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
 
     this.data = this._emp.findEmployee(this.sname);
-    console.log(this.data);
+    // console.log(this.data);
     this._id = this.data._id;
-    console.log(this._id);
+    // console.log(this._id);
   }
   callComponent(_id){
     this._router.navigate(["employee/addempreview", _id]);

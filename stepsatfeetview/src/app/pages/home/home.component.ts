@@ -12,27 +12,29 @@ export class HomeComponent implements OnInit {
   constructor(private _authServ : EmploginService,
     private _authGuard : EmployeeloginGuard,
     private dst : DatastorerService) { }
-    check : boolean = false;
+    check : boolean = true;
     check2 : boolean = false;
+    name : string;
   ngOnInit(): void {
-    console.log(this.check);
-    if(this._authServ.getToken()){
-      // this.check = false;
+    // console.log(this.check);
+    // console.log(this._authServ.getToken())
+    if(this._authServ.getToken()!=null){
+      this.check = false;
+      this.name = localStorage.getItem("mytoken");
+      // console.log(this.name)
     }
     else{
-      // this.check2 = true;
+      this.check=true;
     }
-    console.log(this.check);
-    const dataObservable = this.dst.getData();
-    dataObservable.subscribe((val: boolean) => {
-        this.check = val;
-    });
+    // console.log(this.check);
+    // console.log(this.check);
+
   }
   componentName:string ='EmployeeLogin';
 
   message(compname){
     // console.log(compname);
-    console.log(this.componentName);
+    // console.log(this.componentName);
     this.componentName = compname;
   }
 

@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DatastorerService {
-
   constructor(private _http : HttpClient, private _router : Router) { }
+  usertype : string;
   userid : string ;
   imagename : string;
   logvalue : boolean = false;
@@ -26,8 +26,16 @@ export class DatastorerService {
 
     return dataObservable;
   }
+
+  public getType() : any{
+    return this.usertype;
+  }
   setLogValue(val : boolean){
     this.logvalue = val;
+  }
+  setType(str : string){
+    console.log(str);
+    this.usertype = str;
   }
   public getLogValue(): any {
     const dataObservable = new Observable(observer => {

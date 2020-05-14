@@ -21,7 +21,13 @@ export class EmployeeService {
     console.log(name);
     return this.__http.get("http://localhost:3000/empdetail/"+name);
   }
-
+  updateEmpInfo(email :string){
+    return this.__http.get("http://localhost:3000/updatedetail/"+email);
+  }
+  updateEmpDatails(email :string, data : any){
+    console.log(data);
+    return this.__http.post("http://localhost:3000/empdetail/"+email, data);
+  }
   emptyEmployee(){
     return {
       fname : "",

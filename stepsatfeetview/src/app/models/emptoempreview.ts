@@ -1,6 +1,5 @@
 export interface Emptoempreview {
   empidgiver : any,
-  orgid : any,
   good : string[],
   bad : string[],
   positon : string,

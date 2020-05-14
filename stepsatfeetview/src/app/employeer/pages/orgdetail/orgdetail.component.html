@@ -1,1 +1,62 @@
-<p>orgdetail works!</p>
+<div class="fluid-container" style="margin-top: 150px;">
+  <div class="row">
+      <div class="col-4 offset-2">
+          <div class="row">
+            {{msg}}
+            <div class="bgset">
+              <h1>{{dat}}</h1>
+              <!-- <p>
+                {{ data | json}}
+              </p> -->
+                <div class="card-body">
+                 <table id="emp">
+                     <tr>
+                         <td>Employer </td>
+                         <td>{{dataArray.organization_name}}</td>
+                     </tr>
+                     <tr>
+                        <td>Email</td>
+                        <td>{{dataArray.email}}</td>
+                    </tr>
+                    <tr>
+                        <td>Director</td>
+                        <td>{{dataArray.director | json}}</td>
+                    </tr>
+                    <tr>
+                        <td>Contact</td>
+                        <td>{{dataArray.contact | json}}</td>
+                    </tr>
+                    <tr>
+                        <td>CEO</td>
+                        <td>{{dataArray.ceo}}</td>
+                    </tr>
+                    <tr>
+                      <td><Address></Address></td>
+                      <td>{{dataArray.address}}</td>
+                  </tr>
+                  <tr>
+                    <td>Employee Capacity</td>
+                    <td>{{dataArray.employeeCapacity}}</td>
+                </tr>
+                <tr>
+                  <td>Safety Rating</td>
+                  <td>{{dataArray.safetyRating}}</td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <button class="btn btn-info btn-lg" (click)="callComponent()">Add review</button>
+                  </td>
+                </tr>
+                 </table>
+                 </div>
+            </div>
+          </div>
+          <div class="row" style="margin-top: 20px;margin-left: 200px;">
+
+          </div>
+      </div>
+      <div class="col-3 offset-1">
+          <app-imagedisplay [id]="imageUrl"></app-imagedisplay>
+      </div>
+  </div>
+</div>

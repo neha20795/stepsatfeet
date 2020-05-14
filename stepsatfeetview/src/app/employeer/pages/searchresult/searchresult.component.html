@@ -1,1 +1,32 @@
+<app-searchorg></app-searchorg>
+<div *ngFor="let x of dataArray;">
+  <div class="container">
+    <div class="row" style="background:url(http://www.hdwallsource.com/img/2014/10/blurred-36379-37207-hd-wallpapers.jpg);
+                            border-radius: 15px 20px 25px 30px;
+                            padding: 10px; margin-top: 20px;
+                            font-family: 'Courier New', Courier, monospace;
+                            font-weight: 500;"
+                            >
+      <div class="col-6 offset-1">
+        <div class="container">
+          <div class="row">
+          <div class="col">
+            <h3>{{x.organization_name}}</h3>
+            <pre>{{x.contact | json}}</pre>
+            <pre>{{x.address}}</pre>
+            <pre>{{x.employeeCapacity}}</pre>
+            <button class="btn btn-primary" (click)="details(x.email)" style="height: 50px; width: 150px;">View Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-3 col-1">
+        <div>
+          <img src='../../../../assets/images/employeer/{{x.photos}}'>
+        </div>
+      </div>
+      </div>
+    </div>
+</div>
 

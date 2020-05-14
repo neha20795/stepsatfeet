@@ -11,20 +11,28 @@ export class EmploginService {
 
 
   doLogin(user:Employeelogin){
+    // localStorage.clear();
     return this._http.post<any>("http://localhost:3000/empLogin", user);
   }
 
   logout(){
     localStorage.removeItem("mytoken");
+    localStorage.clear();
     this._router.navigate(["/"]);
   }
 
   getToken(){
-    return localStorage.getItem("mytoken");
+    if(this.isLoggedIn)
+    {
+      return localStorage.getItem("mytoken");
+    }
+    else{
+      return null;
+    }
   }
 
   isLoggedIn(){
-
+    console.log(localStorage.getItem("mytoken"));
     if(localStorage.getItem("mytoken"))
     {
       return true;

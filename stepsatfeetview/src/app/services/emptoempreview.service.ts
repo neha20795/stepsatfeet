@@ -16,12 +16,11 @@ export class EmptoempreviewService {
   emptyReview(){
     return {
       empidgiver : "",
-      orgid : "",
       good : [""],
       bad :[""],
       positon : "",
       rating : null,
-      empidreciever : null
+      empidreciever : ""
     }
   }
 }

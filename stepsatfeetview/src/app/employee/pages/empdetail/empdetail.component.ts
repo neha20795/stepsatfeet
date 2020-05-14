@@ -11,7 +11,10 @@ import { Employeedata } from 'src/app/models/employeedata';
 })
 export class EmpdetailComponent implements OnInit {
 @Input() id : any;
-  constructor(private _emp : EmployeeService,private _router : Router, private _route : ActivatedRoute, private dst : DatastorerService) { }
+  constructor(private _emp : EmployeeService,
+              private _router : Router,
+              private _route : ActivatedRoute,
+              private dst : DatastorerService) { }
   // data : Employeedata ={
   //   _id: "",
   //   fname: "" ,
@@ -34,10 +37,10 @@ export class EmpdetailComponent implements OnInit {
     this._route.paramMap.subscribe((params : ParamMap)=>{
       let name = params.get('emailId');
       this.dat = name;
-      console.log(name);
+      // console.log(name);
     })
      this._emp.searchEmployee(this.dat).subscribe(result=>{
-      console.log(result);
+      // console.log(result);
       this.data = result;
       this.dst.setname(this.data.detail.email, this.data.detail.image);
     },
@@ -48,8 +51,15 @@ export class EmpdetailComponent implements OnInit {
   }
   callComponent(){
     let email = this.data.detail.email;
-    this._router.navigate(["employee/addempreview", email]);
+    let getUserType = localStorage.getItem("Usertype");
+    console.log(localStorage.getItem("Usertype"));
+    console.log(this.dst.getType());
+    if(getUserType == 'employee'){
+      this._router.navigate(["employee/addempreview", email]);
+    }
+    else{
+      this._router.navigate(["employee/addemployeereview", email]);
+    }
   }
   //imgurl = this.data.detail.image;
-
 }

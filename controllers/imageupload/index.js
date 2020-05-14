@@ -20,4 +20,16 @@ routes.post("/", function(req, res){
         res.send({ name : image.name });
     });
 });
+routes.post("/empr", function(req, res){
+    // console.log(req.files);
+    var image = req.files.image;
+    console.log(__dirname + "/angular-fileupload/src/assets/images/employeer/" + image.name);
+    console.log("*******************");
+    console.log(path.join(__dirname, '../../'));
+    let reqPath = path.join(__dirname, '../../');
+    image.mv(reqPath+"stepsatfeetview/src/assets/images/employeer/"+image.name, function(err){
+        console.log(err);
+        res.send({ name : image.name });
+    });
+});
 module.exports=routes;
