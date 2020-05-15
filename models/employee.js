@@ -13,7 +13,7 @@ module.exports.update=function(where, obj, cb){
     connect(function (err, client) {
         
         var db = client.db(dbase);
-        db.collection(dbase).updateOne(where, {$set : obj}, cb)
+        db.collection(dbase).updateOne(where, {obj}, cb)
     });
 }
 module.exports.delete=function(where, cb){
@@ -26,7 +26,7 @@ module.exports.delete=function(where, cb){
 module.exports.insert=function(obj, cb){
     connect(function (err, client) {
         var db = client.db(dbase);
-        db.collection(dbase).insert(obj, cb);
+        db.collection(dbase).insertOne(obj, cb);
 
     });
 }
