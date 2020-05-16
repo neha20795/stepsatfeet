@@ -42,7 +42,7 @@ export class EmpdetailComponent implements OnInit {
      this._emp.searchEmployee(this.dat).subscribe(result=>{
       // console.log(result);
       this.data = result;
-      this.dst.setname(this.data.detail.email, this.data.detail.image);
+      this.dst.setname(this.data.detail.email, this.data.detail.image[0]);
     },
     err=>{
       this.msg = "Check the spelling";

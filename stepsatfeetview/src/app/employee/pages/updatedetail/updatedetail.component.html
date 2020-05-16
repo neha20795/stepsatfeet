@@ -5,39 +5,66 @@
         <h1>Update Details</h1>
         <div class="form-group row">
           <label>Fname</label>
-          <input type="text" class="form-control" [(ngModel)]="empDetails.detail.fname" disabled/>
+          <input type="text" class="form-control" [(ngModel)]="empDetails.fname" disabled/>
         </div>
         <div class="form-group row">
           <label>Lname</label>
-          <input type="text" class="form-control" [(ngModel)]="empDetails.detail.lname" disabled/>
+          <input type="text" class="form-control" [(ngModel)]="empDetails.lname" disabled/>
         </div>
-        <div class="form-group row">
-          <label>Email Id</label>
-          <input type="text" class="form-control" [(ngModel)]="empDetails.detail.email" disabled/>
-        </div>
+<!--        <div class="form-group row">-->
+<!--          <label>Email Id</label>-->
+<!--          <input type="text" class="form-control" [(ngModel)]="empDetails.email" disabled/>-->
+<!--        </div>-->
         <div class="form-group row">
           <label>Mobile</label>
-          <input type="text" class="form-control" [(ngModel)]="empDetails.detail.mobile[0]" required/>
+          <input type="text" class="form-control" [(ngModel)]="mob" required/>
         </div>
         <div class="form-group row">
           <label>Gender</label>
-          <input type="text" class="form-control" [(ngModel)]="empDetails.detail.gender" disabled/>
+          <input type="text" class="form-control" [(ngModel)]="empDetails.gender" disabled/>
         </div>
-        <div class="form-group row">
-          <label>Date of Birth</label>
-          <input type="text" class="form-control" [(ngModel)]="empDetails.detail.dob" disabled/>
-        </div>
+<!--        <div class="form-group row">-->
+<!--          <label>Date of Birth</label>-->
+<!--          <input type="text" class="form-control" [(ngModel)]="empDetails.dob" disabled/>-->
+<!--        </div>-->
         <div class="form-group row">
           <label>Experience</label>
-          <input type="number" class="form-control" [(ngModel)]="empDetails.detail.experience" required/>
+          <input type="number" class="form-control" [(ngModel)]="empDetails.experience" required/>
         </div>
         <div class="form-group row">
           <label>Organization</label>
-          <input type="text" class="form-control" [(ngModel)]="empDetails.detail.organization" required/>
+          <input type="text" class="form-control" [(ngModel)]="empDetails.organization" required/>
         </div>
         <div class="form-group row">
           <label>Address</label>
-          <input type="text" class="form-control" [(ngModel)]="empDetails.detail.address" required/>
+          <div class="form-group row">
+            <label>House/Flat no.</label>
+            <input type="text" class="form-control" [(ngModel)]="empDetails.address.house_no" required/>
+          </div>
+          <div class="form-group row">
+            <label>Street</label>
+            <input type="text" class="form-control" [(ngModel)]="empDetails.address.street" required/>
+          </div>
+          <div class="form-group row">
+            <label>Town</label>
+            <input type="text" class="form-control" [(ngModel)]="empDetails.address.town" required/>
+          </div>
+          <div class="form-group row">
+            <label>City</label>
+            <input type="text" class="form-control" [(ngModel)]="empDetails.address.city" required/>
+          </div>
+          <div class="form-group row">
+            <label>State</label>
+            <input type="text" class="form-control" [(ngModel)]="empDetails.address.state" required/>
+          </div>
+          <div class="form-group row">
+            <label>Country</label>
+            <input type="text" class="form-control" [(ngModel)]="empDetails.address.country" required/>
+          </div>
+          <div class="form-group row">
+            <label>Pin-Code</label>
+            <input type="text" class="form-control" [(ngModel)]="empDetails.address.pincode" required/>
+          </div>
         </div>
         <div class="form-group row">
           <button class="btn btn-success" (click)="update()">Update</button>

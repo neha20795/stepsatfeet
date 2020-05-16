@@ -5,27 +5,28 @@ var collec = "employeetoemployeereview";
 module.exports.find=function(where, cb){
     connect(function (err, client) {
         var db = client.db(dbase);
-        db.collection(dbase).find(where).toArray(cb);
+        db.collection(collec).find(where).toArray(cb);
     });
 }
+
 module.exports.update=function(where, obj, cb){
     connect(function (err, client) {
         
         var db = client.db(dbase);
-        db.collection(dbase).update(where, {$set : obj}, cb)
+        db.collection(collec).update(where, {$set : obj}, cb)
     });
 }
 module.exports.delete=function(where, cb){
     connect(function (err, client) {
         var db = client.db(dbase);
-        db.collection(dbase).remove(where, cb);
+        db.collection(collec).remove(where, cb);
         
     });
 }
 module.exports.insert=function(obj, cb){
     connect(function (err, client) {
         var db = client.db(dbase);
-        db.collection(dbase).insert(obj, cb);
+        db.collection(collec).insert(obj, cb);
 
     });
 }

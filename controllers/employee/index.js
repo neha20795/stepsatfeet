@@ -269,14 +269,7 @@ routes.post("/emplogin", function(req, res){
     routes.post("/empdetail/:email", function(req,res){
         //update mquery
         var em = req.params.email;
-        console.log(req.body);
-        var where = " email : \'"+em+"\'";
-        body = "$set : { organization : \'"+req.body.organization+"\' }, $set : { experience : \'"+req.body.experience+
-        "\' }, $set : { address : \'"+req.body.address+"\' }, $addToSet : {[ \'"+req.body.mobile+"\'] }";
-        console.log("where : "+where);
-        console.log(body);
-        b = "organization : \'"+req.body.organization+"/'"
-        Employee.update({email : em}, b, function(err, result){
+        Employee.update({email : em}, req.body, function(err, result){
             if(err){
                 res.status(401).send({
                     success : false,
@@ -285,6 +278,7 @@ routes.post("/emplogin", function(req, res){
             }
             else{
                 console.log(result);
+                console.log("Found")
                 res.status(200).send({
                     success : true,
                     msg : "updated"
@@ -292,4 +286,25 @@ routes.post("/emplogin", function(req, res){
             }
         } )
     });
+    routes.post("/empaddimage/:email", function (req, res) {
+        var em = req.params.email;
+        console.log(req.body.image);
+        console.log("Body--"+req.body);
+        Employee.updateSet({email : em}, req.body, function (err, result) {
+            if(err){
+                console.log(err);
+                res.status(401).send({
+                    success : false,
+                    msg : "Search for relevant info"
+                });
+            }
+            else{
+                // console.log(result);
+                res.status(200).send({
+                    success : true,
+                    msg : "updated"
+                });
+            }
+        })
+    })
 module.exports=routes;

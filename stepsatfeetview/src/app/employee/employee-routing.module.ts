@@ -7,7 +7,7 @@ import { AddreviewempComponent } from './pages/addreviewemp/addreviewemp.compone
 import { EmpdetailComponent } from './pages/empdetail/empdetail.component';
 import { AddrevieworgComponent } from './pages/addrevieworg/addrevieworg.component';
 import { UpdatedetailComponent } from './pages/updatedetail/updatedetail.component';
-
+import { ReviewbyyouComponent } from './pages/reviewbyyou/reviewbyyou.component';
 const routes: Routes = [
   { path: '',
     component: EmployeeComponent
@@ -34,7 +34,12 @@ const routes: Routes = [
   {
     path : 'updatedetail',
     component : UpdatedetailComponent
+  },
+  {
+    path : 'reviewbyyou',
+    component : ReviewbyyouComponent
   }
+
 ];
 
 @NgModule({

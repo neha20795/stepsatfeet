@@ -12,9 +12,9 @@ import { ImagedisplayComponent } from './pages/imagedisplay/imagedisplay.compone
 import { AddrevieworgComponent } from './pages/addrevieworg/addrevieworg.component';
 import { AddreviewempComponent } from './pages/addreviewemp/addreviewemp.component';
 import { UpdatedetailComponent } from './pages/updatedetail/updatedetail.component';
-import { UploadempimagesComponent } from './pages/uploadempimages/uploadempimages.component';
-import { ReviewfromempComponent } from './pages/reviewfromemp/reviewfromemp.component';
-import { ReviewfromorgComponent } from './pages/reviewfromorg/reviewfromorg.component';
+import { ReviewbyyouComponent } from './pages/reviewbyyou/reviewbyyou.component';
+
+
 // import { ReviewfromemployeeComponent } from './pages/reviewfromemployee/reviewfromemployee.component';
 
 
@@ -29,9 +29,9 @@ import { ReviewfromorgComponent } from './pages/reviewfromorg/reviewfromorg.comp
             AddrevieworgComponent,
             AddreviewempComponent,
             UpdatedetailComponent,
-            UploadempimagesComponent,
-            ReviewfromempComponent,
-            ReviewfromorgComponent],
+            ReviewbyyouComponent,
+
+          ],
   imports: [
     CommonModule,
     EmployeeRoutingModule,

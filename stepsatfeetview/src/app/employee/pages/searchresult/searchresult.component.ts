@@ -49,7 +49,7 @@ export class SearchresultComponent implements OnInit {
           organization : this.data.detail[i].organization,
           email : this.data.detail[i].email,
           gender : this.data.detail[i].gender=="F"?"Female":"Male",
-          address : this.data.detail[i].address,
+          address : this.data.detail[i].address['city'],
           imageeurl : this.data.detail[i].image
         };
         this.dataArray.push(record);

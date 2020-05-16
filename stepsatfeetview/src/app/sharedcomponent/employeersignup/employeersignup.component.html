@@ -48,7 +48,34 @@
           </div>
           <div class="form-group row">
             <label>Address</label>
-            <input type="text"class="form-control" [(ngModel)]="emp.address" required/>
+            <div class="form-group row">
+              <label>House/Flat no.</label>
+              <input type="text"class="form-control" [(ngModel)]="emp.address.house_no" required/>
+            </div>
+            <div class="form-group row">
+              <label>Street</label>
+              <input type="text"class="form-control" [(ngModel)]="emp.address.street" required/>
+            </div>
+            <div class="form-group row">
+              <label>Town</label>
+              <input type="text"class="form-control" [(ngModel)]="emp.address.town" required/>
+            </div>
+            <div class="form-group row">
+              <label>City</label>
+              <input type="text"class="form-control" [(ngModel)]="emp.address.city" required/>
+            </div>
+            <div class="form-group row">
+              <label>State</label>
+              <input type="text"class="form-control" [(ngModel)]="emp.address.state" required/>
+            </div>
+            <div class="form-group row">
+              <label>Country</label>
+              <input type="text"class="form-control" [(ngModel)]="emp.address.country" required/>
+            </div>
+            <div class="form-group row">
+              <label>Pin-Code</label>
+              <input type="text"class="form-control" [(ngModel)]="emp.address.pincode" required/>
+            </div>
           </div>
           <div class="form-group row">
             <label>Contact</label>

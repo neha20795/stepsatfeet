@@ -9,6 +9,7 @@ routes.use("/empreview", require("../controllers/empreview/index"));
 routes.use("/orgreview", require("../controllers/orgreview/index"));
 routes.use("/confidentialreview", require("../controllers/empconfidentialreview/index"));
 routes.use("/imageupload", require("../controllers/imageupload/index"));
+routes.use("/findreview", require("../controllers/findreview/index"));
 
 
 module.exports=routes;

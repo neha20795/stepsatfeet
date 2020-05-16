@@ -33,11 +33,19 @@ export class EmployeersignupComponent implements OnInit {
       ceo : "",
       email : "",
       password : "",
-      address : "",
+      address : {
+        house_no : null,
+        street : "",
+        town : "",
+        city : "",
+        state : "",
+        country : "",
+        pincode : null
+      },
       contact : [""],
       employeeCapacity : null,
       safetyRating : null,
-      photos : ""
+      photos : [""]
   };
   form : any;
   message : any;
@@ -84,9 +92,9 @@ export class EmployeersignupComponent implements OnInit {
 
       // console.log(this.emp);
       this._upload.fileUpload(this.form).subscribe(data=>{
-        this.emp.photos = data.name;
+        // this.emp.photos = data.name;
         // console.log(this.emp.photos);
-        this.emp.photos = data.name;
+        this.emp.photos[0] = data.name;
           // console.log(this.emp.photos);
           for(let i=0; i<le;i++){
             let vars = this.empForm.get(['mobiles',i]).get(['mobile']).value;

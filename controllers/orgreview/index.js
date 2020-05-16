@@ -37,6 +37,7 @@ routes.post("/", function(req, res){
             return res.status(406);
         }
         else{
+            console.log("Succes");
             res.statusText = 'Your have signed-up succesfully';
             return res.status(200);
         }

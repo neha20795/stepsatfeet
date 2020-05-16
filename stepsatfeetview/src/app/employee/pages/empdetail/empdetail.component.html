@@ -37,7 +37,7 @@
                   </tr>
                   <tr>
                     <td>Address</td>
-                    <td>{{data.detail.address}}</td>
+                    <td>{{data.detail.address.city}}</td>
                 </tr>
                 <tr>
                   <td colspan="2">
@@ -53,7 +53,7 @@
           </div>
       </div>
       <div class="col-3 offset-1">
-          <app-imagedisplay [id]="data.detail.image"></app-imagedisplay>
+          <app-imagedisplay [id]="data.detail.image[0]"></app-imagedisplay>
       </div>
   </div>
 

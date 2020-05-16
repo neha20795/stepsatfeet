@@ -98,14 +98,17 @@ export class AddreviewempComponent implements OnInit {
         // console.log(data);
         // console.log("data.statusText");
         this.review = this._emp.emptyReview();
-        let myurl = "/";
-        this.route.navigateByUrl(myurl).then(e => {
-          if (e) {
-            // console.log("Navigation is successful!");
-          } else {
-            // console.log("Navigation has failed!");
-          }
-        });
+        let myurl = "employee";
+          let e = this.dat;
+          this.route.navigate(["/"]);
+
+        //   this.route.navigateByUrl(myurl).then(e => {
+        //   if (e) {
+        //     console.log("Navigation is successful!");
+        //   } else {
+        //     console.log("Navigation has failed!");
+        //   }
+        // });
       },
       error=>{
         console.log("error");

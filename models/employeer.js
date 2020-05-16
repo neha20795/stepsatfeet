@@ -30,3 +30,11 @@ module.exports.insert=function(obj, cb){
 
     });
 }
+
+module.exports.updateSet=function(where, obj, cb){
+    connect(function (err, client) {
+
+        var db = client.db(dbase);
+        db.collection(collec).updateOne(where, {$addToSet : {image : obj}}, cb)
+    });
+}

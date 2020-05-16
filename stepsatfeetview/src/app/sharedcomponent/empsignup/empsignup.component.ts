@@ -31,13 +31,21 @@ export class EmpsignupComponent implements OnInit {
       dob : new Date(),
       email : "",
       password :"",
-      address : "",
+      address : {
+        house_no : null,
+        street : "",
+        town : "",
+        city : "",
+        state : "",
+        country : "",
+        pincode : null
+      },
       organization : "",
       qualification : 0,
       mobile: [""],
       experience : 0,
       gender : "",
-      image : ""
+      image : [""]
   };
   form : any;
   message : any;
@@ -67,9 +75,9 @@ export class EmpsignupComponent implements OnInit {
     let le = (this.empForm.get(['mobiles']).value).length;
       // console.log(this.emp);
       this._upload.fileUpload(this.form).subscribe(data=>{
-        this.emp.image = data.name;
+        // this.emp.image = data.name;
         // console.log(this.emp.image);
-        this.emp.image = data.name;
+        this.emp.image[0] = data.name;
           // console.log(this.emp.image);
           for(let i=0; i<le;i++){
             let vars = this.empForm.get(['mobiles',i]).get(['mobile']).value;

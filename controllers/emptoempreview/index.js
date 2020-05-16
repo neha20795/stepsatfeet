@@ -10,15 +10,28 @@ routes.get("/:name", function(req, res){
         }
         else{
             var where = "info";//write where condition that need to applied
-            Emptoempreview.find({where}, function(err, result){
+            Emptoempreview.find({empidreciever : info}, function(err, result){
                 if(err){
                     res.statusText = 'Something went wrong';
                     return res.status(406);
                 }
                 else{
+                    var detail = new Array();
                     if(result.length>=1){
-                        res.statusText = 'Your have signed-up succesfully';
-                        return res.status(200);
+                        for(x=0;x<result.length;x++){
+                            var detail1 = {
+                                good:result[x].good ,
+                                bad:result[x].bad ,
+                                position: result[x].position,
+                                rating: result[x].rating
+                            }
+                            detail.push(detail1);
+                        }
+                        res.statusText = 'Review Found';
+                        res.status(200).send({
+                            success : true,
+                            detail
+                        });
                     }
                     else{
                         res.statusText = 'No review is available';
@@ -37,6 +50,7 @@ routes.post("/", function(req, res){
             return res.status(406);
         }
         else{
+            console.log("Success");
             res.statusText = 'Your have signed-up succesfully';
             return res.status(200);
         }

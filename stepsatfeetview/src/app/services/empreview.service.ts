@@ -13,6 +13,9 @@ export class EmpreviewService {
     console.log(empreview);
     return this.__http.post<any>("http://localhost:3000/empreview", empreview);
   }
+  getEmployeeReview(email : string){
+    return this.__http.get("http://localhost:3000/empreview/"+email)
+  }
   emptyReview(){
     return {
       empid : null,

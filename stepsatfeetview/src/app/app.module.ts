@@ -20,10 +20,8 @@ import { ContactusComponent } from './pages/contactus/contactus.component';
 // import { UpdateinfoComponent } from './updateinfo/updateinfo.component';
 import { UploadimagesComponent } from './pages/uploadimages/uploadimages.component';
 import { AddmoreinfoComponent } from './pages/addmoreinfo/addmoreinfo.component';
-import { ReviewbyyouComponent } from './pages/reviewbyyou/reviewbyyou.component';
-import { ReviewforyouComponent } from './pages/reviewforyou/reviewforyou.component';
-import { ConfidentialinforequestComponent } from './pages/confidentialinforequest/confidentialinforequest.component';
-import { ReviewComponent } from './pages/review/review.component';
+
+
 // import { SearchEmpComponent } from './employee/search-emp/search-emp.component';
 // import { SearchorgComponent } from './employeer/searchorg/searchorg.component';
 @NgModule({
@@ -42,10 +40,7 @@ import { ReviewComponent } from './pages/review/review.component';
     ContactusComponent,
     UploadimagesComponent,
     AddmoreinfoComponent,
-    ReviewbyyouComponent,
-    ReviewforyouComponent,
-    ConfidentialinforequestComponent,
-    ReviewComponent,
+
 
   ],
   imports: [

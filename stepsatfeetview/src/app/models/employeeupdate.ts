@@ -1,16 +1,15 @@
 import { Address } from '../models/address';
-export interface Employee {
+export interface Employeeupdate {
   fname : string;
   lname : string;
-  dob : Date;
-  email : string;
-  password : string;
+  // dob : Date;
+  // email : string;
+  // password : string;
   address : Address;
   mobile : string[];
   organization : string;
-  qualification : number;
+  qualification : string;
   experience : number;
   gender : any;
-  image : string[];
+  // image : string;
 }
-

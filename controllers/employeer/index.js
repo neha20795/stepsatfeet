@@ -245,5 +245,26 @@ routes.post("/orglogin", function(req, res){
             }
         });
     })
+routes.post("/addimage/:email", function (req, res) {
+    var em = req.params.email;
+    console.log(req.body.image);
+    console.log("Body--"+req.body);
+    Employeer.updateSet({email : em}, req.body, function (err, result) {
+        if(err){
+            console.log(err);
+            res.status(401).send({
+                success : false,
+                msg : "Search for relevant info"
+            });
+        }
+        else{
+            console.log(result);
+            res.status(200).send({
+                success : true,
+                msg : "updated"
+            });
+        }
+    })
+})
 
 module.exports=routes;
